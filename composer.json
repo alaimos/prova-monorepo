@@ -1,0 +1,31 @@
+{
+    "name": "alaimos/prova-monorepo",
+    "description": "Una prova di monorepo",
+    "authors": [
+        {
+            "name": "Salvatore Alaimo",
+            "email": "alaimos@gmail.com",
+            "homepage": "https://alaimos.com"
+        }
+    ],
+    "homepage": "https://github.com/alaimos/prova-monorepo",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/http-kernel": "^5.0"
+    },
+    "require-dev": {
+        "symplify/monorepo-builder": "^11.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "YourMonorepo\\FirstPackage\\": "packages/first-package/src",
+            "YourMonorepo\\SecondPackage\\": "packages/second-package/src"
+        }
+    },
+    "replace": {
+        "alaimos/first-package": "self.version",
+        "alaimos/second-package": "self.version"
+    }
+}
