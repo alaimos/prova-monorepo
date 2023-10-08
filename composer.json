@@ -26,7 +26,7 @@
         }
     },
     "replace": {
-        "alaimos/first-package": "0.2.0",
-        "alaimos/second-package": "0.2.0"
+        "alaimos/first-package": "0.3.0",
+        "alaimos/second-package": "0.3.0"
     }
 }

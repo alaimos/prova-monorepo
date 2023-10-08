@@ -12,9 +12,9 @@
         }
     },
     "repositories": [
-      {
-        "type": "path",
-        "url": "../first-package"
-      }
+        {
+            "type": "path",
+            "url": "../first-package"
+        }
     ]
 }
