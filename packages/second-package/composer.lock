@@ -4,8 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8a1f1f7293e8ef8fe91003c12bc14b0",
+    "content-hash": "043aa3a48de3679076b42e9dff7f7bd1",
     "packages": [
+        {
+            "name": "alaimos/first-package",
+            "version": "0.3",
+            "dist": {
+                "type": "path",
+                "url": "../first-package",
+                "reference": "ba9cb83ea4b41c936f5050223d9f3beba9a6f9b7"
+            },
+            "require": {
+                "php": "^8.1",
+                "symfony/http-kernel": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "YourMonorepo\\FirstPackage\\": "src"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
         {
             "name": "psr/container",
             "version": "1.1.2",
@@ -1383,60 +1405,7 @@
             "time": "2023-09-12T10:11:35+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "symplify/monorepo-builder",
-            "version": "11.2.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symplify/monorepo-builder.git",
-                "reference": "98354c0260029984c47f2b8c8e3a8c90bd5e21fd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symplify/monorepo-builder/zipball/98354c0260029984c47f2b8c8e3a8c90bd5e21fd",
-                "reference": "98354c0260029984c47f2b8c8e3a8c90bd5e21fd",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "bin": [
-                "bin/monorepo-builder"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "10.3-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Prefixed version of Not only Composer tools to build a Monorepo.",
-            "support": {
-                "issues": "https://github.com/symplify/monorepo-builder/issues",
-                "source": "https://github.com/symplify/monorepo-builder/tree/11.2.17"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/rectorphp",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/tomasvotruba",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-08-18T07:53:00+00:00"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],

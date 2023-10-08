@@ -1,6 +1,7 @@
 {
     "name": "alaimos/prova-monorepo",
     "description": "Una prova di monorepo",
+    "version": "0.3",
     "authors": [
         {
             "name": "Salvatore Alaimo",
