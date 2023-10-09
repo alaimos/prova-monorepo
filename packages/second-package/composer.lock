@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "043aa3a48de3679076b42e9dff7f7bd1",
+    "content-hash": "85cacb183f2e827706ecd695d82d7269",
     "packages": [
         {
             "name": "alaimos/first-package",
-            "version": "0.3",
+            "version": "0.4",
             "dist": {
                 "type": "path",
                 "url": "../first-package",
-                "reference": "ba9cb83ea4b41c936f5050223d9f3beba9a6f9b7"
+                "reference": "3cf9a2c98f3c7fe334ae8a5a9716539f9827fdc1"
             },
             "require": {
                 "php": "^8.1",
@@ -1415,5 +1415,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

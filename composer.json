@@ -1,7 +1,7 @@
 {
     "name": "alaimos/prova-monorepo",
     "description": "Una prova di monorepo",
-    "version": "0.3",
+    "version": "0.4",
     "authors": [
         {
             "name": "Salvatore Alaimo",
@@ -22,11 +22,20 @@
     "autoload": {
         "psr-4": {
             "YourMonorepo\\FirstPackage\\": "packages/first-package/src",
-            "YourMonorepo\\SecondPackage\\": "packages/second-package/src"
+            "YourMonorepo\\SecondPackage\\": "packages/second-package/src",
+            "YourMonorepo\\YourMonorepo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YourMonorepo\\YourMonorepo\\": "src"
         }
     },
     "replace": {
         "alaimos/first-package": "0.3.0",
         "alaimos/second-package": "0.3.0"
+    },
+    "scripts": {
+        "monorepo": "monorepo-builder"
     }
 }

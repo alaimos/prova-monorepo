@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/packages/first-package/src" isTestSource="false" packagePrefix="YourMonorepo\FirstPackage\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/second-package/src" isTestSource="false" packagePrefix="YourMonorepo\SecondPackage\" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="YourMonorepo\YourMonorepo\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/monorepo-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/first-package/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/alaimos/first-package" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/second-package/vendor/symfony/var-dumper" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

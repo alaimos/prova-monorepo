@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symplify/monorepo-builder" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/packages/first-package/vendor/composer" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/alaimos/first-package" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/packages/second-package/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/packages/first-package/vendor/autoload.php" />
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/packages/second-package/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>
