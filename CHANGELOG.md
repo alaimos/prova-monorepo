@@ -6,8 +6,7 @@
 
 ## 0.5.0 - 2023-10-15
 
-<<<<<<< Updated upstream
-- Initial commit [ c3b492a ]
+- Initial commit [c3b492a]
 - first test [84a1da1]
 - second test [0f5b2a8]
 - prepare release [d493fbc]
@@ -29,8 +28,6 @@
 - fixes [35f916e]
 - prepare release [7b96c69]
 - open 0.5-dev [45a5dda]
-=======
->>>>>>> Stashed changes
 - updated composer.json versions [654eb2e]
 - better handling of automatic version increase in composer.json [e31b19a]
 - automatic handling of Changelog file [c4503c9]
