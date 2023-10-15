@@ -13,6 +13,8 @@ use Symplify\MonorepoBuilder\Release\ReleaseWorker\TagVersionReleaseWorker;
 use Symplify\MonorepoBuilder\Release\ReleaseWorker\UpdateBranchAliasReleaseWorker;
 use Symplify\MonorepoBuilder\Release\ReleaseWorker\UpdateReplaceReleaseWorker;
 use Symplify\MonorepoBuilder\ValueObject\Option;
+use YourMonorepo\YourMonorepo\AddUnreleasedStubToChangelogFileWorker;
+use YourMonorepo\YourMonorepo\FillChangelogFileWorker;
 use YourMonorepo\YourMonorepo\UpdatePackageNextVersionWorker;
 use YourMonorepo\YourMonorepo\UpdatePackageVersionWorker;
 
@@ -39,14 +41,16 @@ return static function (MBConfig $mbConfig): void {
         [
             UpdatePackageVersionWorker::class,
             UpdateReplaceReleaseWorker::class,
+            FillChangelogFileWorker::class,
             SetCurrentMutualDependenciesReleaseWorker::class,
             AddTagToChangelogReleaseWorker::class,
             TagVersionReleaseWorker::class,
             PushTagReleaseWorker::class,
             SetNextMutualDependenciesReleaseWorker::class,
             UpdateBranchAliasReleaseWorker::class,
-            PushNextDevReleaseWorker::class,
             UpdatePackageNextVersionWorker::class,
+            AddUnreleasedStubToChangelogFileWorker::class,
+            PushNextDevReleaseWorker::class,
         ]
     );
 };
