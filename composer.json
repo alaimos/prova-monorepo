@@ -32,8 +32,8 @@
         }
     },
     "replace": {
-        "alaimos/first-package": "0.4.1",
-        "alaimos/second-package": "0.4.1"
+        "alaimos/first-package": "0.5.0",
+        "alaimos/second-package": "0.5.0"
     },
     "scripts": {
         "monorepo": "monorepo-builder"
