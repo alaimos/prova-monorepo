@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.6.1 - 2023-10-15
 
-<!-- automatic release commit placeholder == DO NOT REMOVE == -->
+- auto Changelog filling: patch versions should be handled correctly [9541e3b]
+- bugfixes [4ea6b91]
 
 ## 0.6.0 - 2023-10-15
 

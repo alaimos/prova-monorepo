@@ -1,7 +1,7 @@
 {
     "name": "alaimos/prova-monorepo",
     "description": "Una prova di monorepo",
-    "version": "0.7.0",
+    "version": "0.6.1",
     "authors": [
         {
             "name": "Salvatore Alaimo",
@@ -32,8 +32,8 @@
         }
     },
     "replace": {
-        "alaimos/first-package": "0.6.0",
-        "alaimos/second-package": "0.6.0"
+        "alaimos/first-package": "0.6.1",
+        "alaimos/second-package": "0.6.1"
     },
     "scripts": {
         "monorepo": "monorepo-builder"
