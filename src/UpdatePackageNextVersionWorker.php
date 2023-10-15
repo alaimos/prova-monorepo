@@ -12,7 +12,7 @@ use Symplify\MonorepoBuilder\Release\Contract\ReleaseWorker\ReleaseWorkerInterfa
 use Symplify\MonorepoBuilder\Release\Exception\MissingComposerJsonException;
 use Symplify\MonorepoBuilder\Utils\VersionUtils;
 
-final class UpdatePackageVersionWorker implements ReleaseWorkerInterface
+final class UpdatePackageNextVersionWorker implements ReleaseWorkerInterface
 {
 
     /**
@@ -43,8 +43,21 @@ final class UpdatePackageVersionWorker implements ReleaseWorkerInterface
      */
     public function work(Version $version): void
     {
-        $this->updateRootComposer($version);
-        $this->updatePackageComposerJsons($version);
+        $nextVersion = $this->getNextVersion($version);
+        $this->updateRootComposer($nextVersion);
+        $this->updatePackageComposerJsons($nextVersion);
+    }
+
+    private function getNextVersion(Version $version): Version
+    {
+        return new Version(
+            sprintf(
+                '%d.%d.%d',
+                $version->getMajor()->getValue() ?? 0,
+                ($version->getMinor()->getValue() ?? 0) + 1,
+                0
+            )
+        );
     }
 
     /**

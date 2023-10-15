@@ -13,6 +13,7 @@ use Symplify\MonorepoBuilder\Release\ReleaseWorker\TagVersionReleaseWorker;
 use Symplify\MonorepoBuilder\Release\ReleaseWorker\UpdateBranchAliasReleaseWorker;
 use Symplify\MonorepoBuilder\Release\ReleaseWorker\UpdateReplaceReleaseWorker;
 use Symplify\MonorepoBuilder\ValueObject\Option;
+use YourMonorepo\YourMonorepo\UpdatePackageNextVersionWorker;
 use YourMonorepo\YourMonorepo\UpdatePackageVersionWorker;
 
 require __DIR__.'/vendor/autoload.php';
@@ -36,6 +37,7 @@ return static function (MBConfig $mbConfig): void {
     // release workers - in order to execute
     $mbConfig->workers(
         [
+            UpdatePackageVersionWorker::class,
             UpdateReplaceReleaseWorker::class,
             SetCurrentMutualDependenciesReleaseWorker::class,
             AddTagToChangelogReleaseWorker::class,
@@ -44,7 +46,7 @@ return static function (MBConfig $mbConfig): void {
             SetNextMutualDependenciesReleaseWorker::class,
             UpdateBranchAliasReleaseWorker::class,
             PushNextDevReleaseWorker::class,
-            UpdatePackageVersionWorker::class,
+            UpdatePackageNextVersionWorker::class,
         ]
     );
 };
