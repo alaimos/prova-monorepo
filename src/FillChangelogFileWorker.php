@@ -7,11 +7,9 @@ namespace YourMonorepo\YourMonorepo;
 use MonorepoBuilderPrefix202308\Symplify\PackageBuilder\Parameter\ParameterProvider;
 use MonorepoBuilderPrefix202308\Symplify\SmartFileSystem\SmartFileSystem;
 use PharIo\Version\Version;
+use Symplify\MonorepoBuilder\FileSystem\ComposerJsonProvider;
 use Symplify\MonorepoBuilder\Release\Contract\ReleaseWorker\ReleaseWorkerInterface;
 use Symplify\MonorepoBuilder\Release\Process\ProcessRunner;
-use Symplify\MonorepoBuilder\Utils\VersionUtils;
-
-use Symplify\MonorepoBuilder\ValueObject\Option;
 
 use function array_filter;
 use function array_map;
@@ -36,7 +34,7 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
     public function __construct(
         private readonly ProcessRunner $processRunner,
         private readonly SmartFileSystem $smartFileSystem,
-        private readonly VersionUtils $versionUtils,
+        private readonly ComposerJsonProvider $composerJsonProvider,
         ParameterProvider $parameterProvider
     ) {
         $this->packageAliasFormat = $parameterProvider->provideStringParameter('package_alias_format');
@@ -83,7 +81,7 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
             },
             $logData
         );
-        $lastCommitSubject = sprintf(self::OPEN_COMMIT_SUBJECT, $this->getAliasFormat($version));
+        $lastCommitSubject = sprintf(self::OPEN_COMMIT_SUBJECT, $this->getVersionString($version));
         foreach ($logData as $key => $logEntry) {
             if ($logEntry["subject"] === $lastCommitSubject) {
                 $logData = array_slice($logData, 0, $key);
@@ -102,6 +100,17 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
         }
 
         return trim($gitHistoryString);
+    }
+
+    private function getVersionString(Version $version): string
+    {
+        $rootComposerJson = $this->composerJsonProvider->getRootComposerJson();
+        $rootVersion = new Version($rootComposerJson->getVersion());
+        if ($rootVersion->isGreaterThan($version)) {
+            return $this->getAliasFormat($rootVersion);
+        }
+
+        return $this->getAliasFormat($version);
     }
 
     private function getAliasFormat(Version $version): string
