@@ -76,6 +76,7 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
             $logData
         );
         $lastCommitSubject = sprintf(self::OPEN_COMMIT_SUBJECT, $this->versionUtils->getNextAliasFormat($version));
+        dd($lastCommitSubject);
         foreach ($logData as $key => $logEntry) {
             if ($logEntry["subject"] === $lastCommitSubject) {
                 $logData = array_slice($logData, 0, $key);
@@ -93,6 +94,7 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
             $gitHistoryString .= sprintf("- %s [%s]\n", $gitHistory[$i]["subject"], $gitHistory[$i]["commit"]);
         }
 
+        dd($gitHistoryString);
         return trim($gitHistoryString);
     }
 }

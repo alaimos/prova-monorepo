@@ -39,9 +39,9 @@ return static function (MBConfig $mbConfig): void {
     // release workers - in order to execute
     $mbConfig->workers(
         [
+            FillChangelogFileWorker::class,
             UpdatePackageVersionWorker::class,
             UpdateReplaceReleaseWorker::class,
-            FillChangelogFileWorker::class,
             SetCurrentMutualDependenciesReleaseWorker::class,
             AddTagToChangelogReleaseWorker::class,
             TagVersionReleaseWorker::class,
