@@ -6,7 +6,7 @@
 
 ## 0.5.0 - 2023-10-15
 
-- Initial commit [c3b492a]
+- Initial commit [commit c3b492a]
 - first test [84a1da1]
 - second test [0f5b2a8]
 - prepare release [d493fbc]
