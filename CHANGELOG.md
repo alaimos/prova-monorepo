@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+<!-- automatic release commit placeholder == DO NOT REMOVE == -->
+
 ## 0.5.0 - 2023-10-15
 
 - Initial commit [c3b492a]
