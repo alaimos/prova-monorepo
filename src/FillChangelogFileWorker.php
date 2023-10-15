@@ -4,11 +4,14 @@ declare (strict_types=1);
 
 namespace YourMonorepo\YourMonorepo;
 
+use MonorepoBuilderPrefix202308\Symplify\PackageBuilder\Parameter\ParameterProvider;
 use MonorepoBuilderPrefix202308\Symplify\SmartFileSystem\SmartFileSystem;
 use PharIo\Version\Version;
 use Symplify\MonorepoBuilder\Release\Contract\ReleaseWorker\ReleaseWorkerInterface;
 use Symplify\MonorepoBuilder\Release\Process\ProcessRunner;
 use Symplify\MonorepoBuilder\Utils\VersionUtils;
+
+use Symplify\MonorepoBuilder\ValueObject\Option;
 
 use function array_filter;
 use function array_map;
@@ -28,11 +31,16 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
     private const UNRELEASED_PLACEHOLDER = '<!-- automatic release commit placeholder == DO NOT REMOVE == -->';
     private const GIT_LOG_COMMAND        = "git log --pretty=format:'Commit: %h%nSubject: %s%n<==>'";
 
+    private readonly string $packageAliasFormat;
+
     public function __construct(
         private readonly ProcessRunner $processRunner,
         private readonly SmartFileSystem $smartFileSystem,
-        private readonly VersionUtils $versionUtils
-    ) {}
+        private readonly VersionUtils $versionUtils,
+        ParameterProvider $parameterProvider
+    ) {
+        $this->packageAliasFormat = $parameterProvider->provideStringParameter('package_alias_format');
+    }
 
     public function getDescription(Version $version): string
     {
@@ -75,8 +83,7 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
             },
             $logData
         );
-        $lastCommitSubject = sprintf(self::OPEN_COMMIT_SUBJECT, $this->versionUtils->getNextAliasFormat($version));
-        dd($lastCommitSubject);
+        $lastCommitSubject = sprintf(self::OPEN_COMMIT_SUBJECT, $this->getAliasFormat($version));
         foreach ($logData as $key => $logEntry) {
             if ($logEntry["subject"] === $lastCommitSubject) {
                 $logData = array_slice($logData, 0, $key);
@@ -87,14 +94,22 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
         return $logData;
     }
 
-    protected function getGitHistoryString(array $gitHistory): string
+    private function getGitHistoryString(array $gitHistory): string
     {
         $gitHistoryString = "";
         for ($i = count($gitHistory) - 1; $i >= 0; $i--) {
             $gitHistoryString .= sprintf("- %s [%s]\n", $gitHistory[$i]["subject"], $gitHistory[$i]["commit"]);
         }
 
-        dd($gitHistoryString);
         return trim($gitHistoryString);
+    }
+
+    private function getAliasFormat(Version $version): string
+    {
+        return str_replace(
+            ['<major>', '<minor>'],
+            [$version->getMajor()->getValue(), $version->getMinor()->getValue()],
+            $this->packageAliasFormat
+        );
     }
 }
