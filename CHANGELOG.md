@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+<!-- automatic release commit placeholder == DO NOT REMOVE == -->
+
 ## 0.6.0 - 2023-10-15
 
 - Update CHANGELOG.md [af488e1]
