@@ -7,22 +7,17 @@ namespace YourMonorepo\YourMonorepo;
 use MonorepoBuilderPrefix202308\Symplify\SmartFileSystem\SmartFileInfo;
 use PharIo\Version\Version;
 use Symplify\MonorepoBuilder\ComposerJsonManipulator\FileSystem\JsonFileManager;
+use Symplify\MonorepoBuilder\ComposerJsonManipulator\ValueObject\ComposerJson;
 use Symplify\MonorepoBuilder\FileSystem\ComposerJsonProvider;
 use Symplify\MonorepoBuilder\Release\Contract\ReleaseWorker\ReleaseWorkerInterface;
 use Symplify\MonorepoBuilder\Release\Exception\MissingComposerJsonException;
 use Symplify\MonorepoBuilder\Utils\VersionUtils;
 
-final class UpdatePackageVersionWorker implements ReleaseWorkerInterface
+class UpdatePackageVersionWorker implements ReleaseWorkerInterface
 {
 
-    /**
-     * @var \Symplify\MonorepoBuilder\FileSystem\ComposerJsonProvider
-     */
-    private ComposerJsonProvider $composerJsonProvider;
-    /**
-     * @var \Symplify\MonorepoBuilder\ComposerJsonManipulator\FileSystem\JsonFileManager
-     */
-    private JsonFileManager $jsonFileManager;
+    protected ComposerJsonProvider $composerJsonProvider;
+    protected JsonFileManager $jsonFileManager;
 
     public function __construct(
         ComposerJsonProvider $composerJsonProvider,
@@ -37,44 +32,33 @@ final class UpdatePackageVersionWorker implements ReleaseWorkerInterface
         return "Update the version in all composer.json files to the current version";
     }
 
-    /**
-     * @throws \Symplify\MonorepoBuilder\Release\Exception\MissingComposerJsonException
-     * @throws \MonorepoBuilderPrefix202308\Symplify\SymplifyKernel\Exception\ShouldNotHappenException
-     */
     public function work(Version $version): void
     {
         $this->updateRootComposer($version);
         $this->updatePackageComposerJsons($version);
     }
 
-    /**
-     * @throws \Symplify\MonorepoBuilder\Release\Exception\MissingComposerJsonException
-     */
-    private function updateRootComposer(Version $version): void
+    protected function updateRootComposer(Version $version): void
     {
         $rootComposerJson = $this->composerJsonProvider->getRootComposerJson();
-        $rootComposerJson->setVersion($version->getVersionString());
-        $rootFileInfo = $rootComposerJson->getFileInfo();
-        if (!$rootFileInfo instanceof SmartFileInfo) {
-            throw new MissingComposerJsonException();
-        }
-        $this->jsonFileManager->printJsonToFileInfo($rootComposerJson->getJsonArray(), $rootFileInfo);
+        $this->updateComposerJson($rootComposerJson, $version);
     }
 
-    /**
-     * @throws \MonorepoBuilderPrefix202308\Symplify\SymplifyKernel\Exception\ShouldNotHappenException
-     */
-    private function updatePackageComposerJsons(Version $version): void
+    protected function updatePackageComposerJsons(Version $version): void
     {
         $packageComposerJsons = $this->composerJsonProvider->getPackageComposerJsons();
         foreach ($packageComposerJsons as $packageComposerJson) {
-            $packageName = $packageComposerJson->getName();
-            if ($packageName === null) {
-                continue;
-            }
-            $packageComposerJson->setVersion($version->getVersionString());
-            $packageFileInfo = $this->composerJsonProvider->getPackageFileInfoByName($packageName);
-            $this->jsonFileManager->printJsonToFileInfo($packageComposerJson->getJsonArray(), $packageFileInfo);
+            $this->updateComposerJson($packageComposerJson, $version);
         }
+    }
+
+    protected function updateComposerJson(ComposerJson $composerJson, Version $version): void
+    {
+        $composerJsonFileInfo = $composerJson->getFileInfo();
+        if ($composerJsonFileInfo === null) {
+            return;
+        }
+        $composerJson->setVersion($version->getVersionString());
+        $this->jsonFileManager->printJsonToFileInfo($composerJson->getJsonArray(), $composerJsonFileInfo);
     }
 }
