@@ -1,8 +1,13 @@
 # Changelog
 
-## Unreleased
+## 0.6.0 - 2023-10-15
 
-<!-- automatic release commit placeholder == DO NOT REMOVE == -->
+- Update CHANGELOG.md [af488e1]
+- Auto stash before merge of "main" and "origin/main" [9d8ead2]
+- Auto stash before merge of "main" and "origin/main" [1b4525f]
+- bugfixes [59018ba]
+- test [5aace84]
+- test [c760230]
 
 ## 0.5.0 - 2023-10-15
 
