@@ -7,19 +7,11 @@ namespace YourMonorepo\YourMonorepo;
 use MonorepoBuilderPrefix202308\Symplify\SmartFileSystem\SmartFileSystem;
 use PharIo\Version\Version;
 use Symplify\MonorepoBuilder\Release\Contract\ReleaseWorker\ReleaseWorkerInterface;
-use Symplify\MonorepoBuilder\Release\Process\ProcessRunner;
-use Symplify\MonorepoBuilder\Utils\VersionUtils;
 
-use function array_filter;
-use function array_map;
-use function array_slice;
-use function count;
 use function explode;
 use function file_exists;
 use function getcwd;
-use function sprintf;
-use function str_replace;
-use function trim;
+use function implode;
 
 final class AddUnreleasedStubToChangelogFileWorker implements ReleaseWorkerInterface
 {

@@ -4,14 +4,7 @@ declare (strict_types=1);
 
 namespace YourMonorepo\YourMonorepo;
 
-use MonorepoBuilderPrefix202308\Symplify\SmartFileSystem\SmartFileInfo;
 use PharIo\Version\Version;
-use Symplify\MonorepoBuilder\ComposerJsonManipulator\FileSystem\JsonFileManager;
-use Symplify\MonorepoBuilder\ComposerJsonManipulator\ValueObject\ComposerJson;
-use Symplify\MonorepoBuilder\FileSystem\ComposerJsonProvider;
-use Symplify\MonorepoBuilder\Release\Contract\ReleaseWorker\ReleaseWorkerInterface;
-use Symplify\MonorepoBuilder\Release\Exception\MissingComposerJsonException;
-use Symplify\MonorepoBuilder\Utils\VersionUtils;
 
 final class UpdatePackageNextVersionWorker extends UpdatePackageVersionWorker
 {
