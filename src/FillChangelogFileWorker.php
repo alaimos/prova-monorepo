@@ -67,7 +67,7 @@ final class FillChangelogFileWorker implements ReleaseWorkerInterface
                 $logEntry = explode("\n", $logEntry);
                 $logEntry = array_map(
                     static function ($logEntryLine) {
-                        $logEntryData = explode(":", $logEntryLine);
+                        $logEntryData = explode(":", $logEntryLine, 2);
 
                         return trim($logEntryData[1]);
                     },
