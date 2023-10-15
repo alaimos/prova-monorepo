@@ -34,7 +34,7 @@ final class UpdatePackageNextVersionWorker implements ReleaseWorkerInterface
 
     public function getDescription(Version $version): string
     {
-        return "Update the version in all composer.json files to the new tag";
+        return "Update the version in all composer.json files to the next version";
     }
 
     /**
